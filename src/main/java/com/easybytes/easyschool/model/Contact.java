@@ -6,8 +6,13 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @Data
 public class Contact {
+
+    private int contactId;
+
 
     /*
 @Data annotation is provided by Lombok library which generates getter, setter,
@@ -35,4 +40,28 @@ This makes our code short and clean.
     @Size(min=10, message="Message must be at least 10 characters long")
     private String message;
 
+    private String status;
+
+    public void setCreatedBy(String anonymous) {
+    }
+
+    public void setCreatedAt(LocalDateTime now) {
+
+    }
+
+    public Object getCreatedAt() {
+        return null;
+    }
+
+    public Object getCreatedBy() {
+        return null;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+
+    }
 }

@@ -4,7 +4,7 @@ import com.sun.jdi.PrimitiveValue;
 import lombok.*;
 
 @Data
-public class Holiday {
+public class Holiday extends BaseEntity{
 
     private final String day;
     private  final  String reason;
