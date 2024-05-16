@@ -1,16 +1,22 @@
 package com.easybytes.easyschool.model;
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-
-import java.time.LocalDateTime;
+import org.hibernate.annotations.GenericGenerator;
 
 @Data
-public class Contact {
+@Entity
+@Table(name="contact_msg")
+public class Contact extends BaseEntity{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO,generator="native")
+    @GenericGenerator(name = "native",strategy = "native")
+    @Column(name = "contact_id")
     private int contactId;
 
 
@@ -42,26 +48,7 @@ This makes our code short and clean.
 
     private String status;
 
-    public void setCreatedBy(String anonymous) {
-    }
 
-    public void setCreatedAt(LocalDateTime now) {
 
-    }
 
-    public Object getCreatedAt() {
-        return null;
-    }
-
-    public Object getCreatedBy() {
-        return null;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-
-    }
 }
